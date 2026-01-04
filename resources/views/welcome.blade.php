@@ -48,10 +48,17 @@
         System zarządzania częściami magazynowymi
     </p>
 
-    <a href="{{ route('login') }}"
-       class="inline-block px-6 py-3 bg-green-600 text-white rounded text-lg hover:bg-green-700">
-        Zaloguj się
-    </a>
+    @auth
+        <a href="{{ route('magazyn.check') }}"
+           class="inline-block px-6 py-3 bg-blue-600 text-white rounded text-lg hover:bg-blue-700">
+            Wejdź do magazynu
+        </a>
+    @else
+        <a href="{{ route('login') }}"
+           class="inline-block px-6 py-3 bg-green-600 text-white rounded text-lg hover:bg-green-700">
+            Zaloguj się
+        </a>
+    @endauth
 </main>
 
 </body>
