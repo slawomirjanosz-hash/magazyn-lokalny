@@ -18,6 +18,8 @@ RUN apt-get update \
     && php artisan route:cache \
     && php artisan view:cache
 
+# Railway rebuild trigger
+
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8080"]
 
 # force rebuild
