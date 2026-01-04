@@ -25,6 +25,8 @@ RUN apt-get update \
     && mkdir -p bootstrap/cache \
     && chmod -R 777 bootstrap/cache \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
+    && echo "PHP MODULES:" \
+    && php -m \
     && composer install --no-dev --optimize-autoloader \
     && npm install \
     && npm run build \
