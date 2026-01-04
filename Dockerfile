@@ -38,6 +38,7 @@ RUN apt-get update \
 # Railway rebuild trigger
 
 RUN php -m && php -i
+#
 
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8080"]
 
