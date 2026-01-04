@@ -10,6 +10,7 @@ RUN apt-get update \
     && apt-get install -y git unzip libpng-dev libonig-dev libxml2-dev libjpeg-dev libzip-dev zip curl \
     && docker-php-ext-configure gd --with-jpeg \
     && docker-php-ext-install gd zip \
+    # --- force rebuild ---
     && mkdir -p bootstrap/cache \
     && chmod -R 777 bootstrap/cache \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
