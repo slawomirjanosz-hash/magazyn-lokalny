@@ -13,6 +13,9 @@ RUN apt-get update \
     # --- force rebuild ---
     && mkdir -p bootstrap/cache \
     && chmod -R 777 bootstrap/cache \
+    # Install Node.js and npm
+    && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y nodejs \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && composer install --no-dev --optimize-autoloader \
     && npm install \
